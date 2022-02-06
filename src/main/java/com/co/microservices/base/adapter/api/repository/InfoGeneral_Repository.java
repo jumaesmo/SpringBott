@@ -1,12 +1,14 @@
 package com.co.microservices.base.adapter.api.repository;
 
 import com.co.microservices.base.domain.InfoGeneral.repository.InfoGeneralInfoRepository;
+import com.co.microservices.base.domain.InfoGeneral.request.cases.CasesRequest;
 import com.co.microservices.base.domain.InfoGeneral.request.entities.Contacts;
 import com.co.microservices.base.domain.InfoGeneral.request.entities.EntitiesRequest;
 import com.co.microservices.base.domain.InfoGeneral.request.general.InfoGeneralRequest;
 import com.co.microservices.base.domain.InfoGeneral.request.token.TokenRequest;
 import com.co.microservices.base.domain.InfoGeneral.response.EntitiesResponse;
 import com.co.microservices.base.domain.InfoGeneral.response.TokenResponse;
+import com.co.microservices.base.domain.InfoGeneral.response.cases.CasesResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import java.util.List;
@@ -83,5 +85,17 @@ public class InfoGeneral_Repository implements InfoGeneralInfoRepository {
         );
 
     return objectMapper.convertValue(result.getBody(), EntitiesResponse.class);
+  }
+
+  @Override
+  public CasesResponse getCases(InfoGeneralRequest info, String token) {
+    HttpHeaders headers = new HttpHeaders();
+    headers.set("Authorization", token);
+    headers.set("accept", "application/json");
+    headers.set("Content-Type", "application/json");
+    CasesRequest casesRequest = new CasesRequest();
+
+
+    return null;
   }
 }

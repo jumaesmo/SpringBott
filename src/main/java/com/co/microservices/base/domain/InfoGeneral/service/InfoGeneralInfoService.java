@@ -4,6 +4,8 @@ import com.co.microservices.base.domain.InfoGeneral.repository.CRUDRepository;
 import com.co.microservices.base.domain.InfoGeneral.repository.InfoGeneralInfoRepository;
 import com.co.microservices.base.domain.InfoGeneral.request.general.InfoGeneralRequest;
 import com.co.microservices.base.domain.InfoGeneral.response.TokenResponse;
+import com.co.microservices.base.domain.InfoGeneral.response.cases.CasesResponse;
+
 import org.apache.log4j.Logger;
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +28,8 @@ public class InfoGeneralInfoService {
     public TokenResponse getInfoGeneralData(InfoGeneralRequest info) {
         TokenResponse tokenResponse = informationGeneralinfoRepository.getToken(info);
         this.crudRepository.saveToken(tokenResponse.getToken());
+        
+        // CasesResponse casesResponse = informationGeneralinfoRepository.getCases(info, tokenResponse.getToken());
         // EntitiesResponse entitiesResponse = informationGeneralinfoRepository.getEntities(info,tokenResponse.getToken());
         return tokenResponse;
     }

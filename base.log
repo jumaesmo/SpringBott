@@ -121,3 +121,9 @@
 2022-02-06 17:12:06 ERROR InfoGeneralController:37 - com.co.microservices.base.domain.InfoGeneral.request.general.InfoGeneralRequest@1e793c3f
 2022-02-06 17:15:52 ERROR InfoGeneralController:37 - com.co.microservices.base.domain.InfoGeneral.request.general.InfoGeneralRequest@7de6c73c
 2022-02-06 17:16:31 ERROR InfoGeneralController:37 - com.co.microservices.base.domain.InfoGeneral.request.general.InfoGeneralRequest@eb11f92
+2022-02-06 17:19:35 ERROR InfoGeneralController:37 - com.co.microservices.base.domain.InfoGeneral.request.general.InfoGeneralRequest@3c0f962f
+2022-02-06 17:30:41 ERROR InfoGeneralController:37 - com.co.microservices.base.domain.InfoGeneral.request.general.InfoGeneralRequest@65338b2a
+2022-02-06 17:40:19 ERROR InfoGeneralController:37 - com.co.microservices.base.domain.InfoGeneral.request.general.InfoGeneralRequest@3be3a8cd
+2022-02-06 18:23:18 ERROR InfoGeneralController:37 - com.co.microservices.base.domain.InfoGeneral.request.general.InfoGeneralRequest@1d9a15ed
+2022-02-06 18:35:30 ERROR InfoGeneralController:37 - com.co.microservices.base.domain.InfoGeneral.request.general.InfoGeneralRequest@85d46ec
+2022-02-06 18:35:31 ERROR InfoGeneralController:44 - org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement

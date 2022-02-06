@@ -4,7 +4,9 @@ import com.co.microservices.base.adapter.database.TokenRepositoryJPA;
 import com.co.microservices.base.adapter.database.model.TokenEntity;
 import com.co.microservices.base.domain.InfoGeneral.repository.CRUDRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class CrudDBRepository implements CRUDRepository {
     private final TokenRepositoryJPA tokenRepositoryJPA;
 
