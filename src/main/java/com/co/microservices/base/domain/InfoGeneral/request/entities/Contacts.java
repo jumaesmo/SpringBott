@@ -1,4 +1,4 @@
-package com.co.microservices.base.domain.InfoGeneral.request.general;
+package com.co.microservices.base.domain.InfoGeneral.request.entities;
 
 public class Contacts {
     private boolean callbackReferent;

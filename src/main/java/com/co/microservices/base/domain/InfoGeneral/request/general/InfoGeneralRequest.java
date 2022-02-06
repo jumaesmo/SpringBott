@@ -2,12 +2,16 @@ package com.co.microservices.base.domain.InfoGeneral.request.general;
 
 import java.util.List;
 
+import com.co.microservices.base.domain.InfoGeneral.request.entities.Contacts;
+import com.co.microservices.base.domain.InfoGeneral.request.entities.Field;
+import com.co.microservices.base.domain.InfoGeneral.request.token.TokenRequest;
+
 public class InfoGeneralRequest {
     private List<Contacts> contacts;
     private int entityTypeId;
     private List<Field> fields;
     private List<Integer> linkedEntitiesIds;
-    private User user;
+    private TokenRequest user;
 
     public List<Contacts> getContacts() {
         return contacts;
@@ -41,11 +45,11 @@ public class InfoGeneralRequest {
         this.linkedEntitiesIds = linkedEntitiesIds;
     }
 
-    public User getUser() {
+    public TokenRequest getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(TokenRequest user) {
         this.user = user;
     }
 }

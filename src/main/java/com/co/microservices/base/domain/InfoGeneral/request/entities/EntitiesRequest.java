@@ -1,8 +1,5 @@
 package com.co.microservices.base.domain.InfoGeneral.request.entities;
 
-import com.co.microservices.base.domain.InfoGeneral.request.general.Contacts;
-import com.co.microservices.base.domain.InfoGeneral.request.general.Field;
-
 import java.util.List;
 
 public class EntitiesRequest {

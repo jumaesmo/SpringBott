@@ -24,7 +24,7 @@ public class InfoGeneralInfoService {
 
     public TokenResponse getInfoGeneralData(InfoGeneralRequest info) {
         TokenResponse tokenResponse = informationGeneralinfoRepository.getToken(info);
-        EntitiesResponse entitiesResponse = informationGeneralinfoRepository.getEntities(info,tokenResponse.getToken());
+        // EntitiesResponse entitiesResponse = informationGeneralinfoRepository.getEntities(info,tokenResponse.getToken());
         return tokenResponse;
     }
 
