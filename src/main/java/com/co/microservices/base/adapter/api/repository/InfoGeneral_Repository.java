@@ -54,19 +54,22 @@ public class InfoGeneral_Repository implements InfoGeneralInfoRepository {
   public EntitiesResponse getEntities(InfoGeneralRequest info, String token) {
     HttpHeaders headers = new HttpHeaders();
     headers.set("Authorization", token);
-    headers.set("accept", "application/json"); 
+    headers.set("accept", "application/json");
     headers.set("Content-Type", "application/json");
     EntitiesRequest entitiesRequest = new EntitiesRequest();
 
-    entitiesRequest.setEntityTypeId(info.getEntityTypeId());
+    entitiesRequest.setEntityTypeId(info.getEntities().getEntityTypeId());
     List<Contacts> contacts = info
+      .getEntities()
       .getContacts()
       .stream()
       .filter(contacts1 -> contacts1.isCallbackReferent())
       .collect(Collectors.toList());
     entitiesRequest.setContacts(contacts);
-    entitiesRequest.setFields(info.getFields());
-    entitiesRequest.setLinkedEntitiesIds(info.getLinkedEntitiesIds());
+    entitiesRequest.setFields(info.getEntities().getFields());
+    entitiesRequest.setLinkedEntitiesIds(
+      info.getEntities().getLinkedEntitiesIds()
+    );
 
     HttpEntity<EntitiesRequest> request = new HttpEntity<>(
       entitiesRequest,

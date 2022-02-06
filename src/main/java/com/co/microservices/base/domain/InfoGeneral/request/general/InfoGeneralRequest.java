@@ -1,55 +1,36 @@
 package com.co.microservices.base.domain.InfoGeneral.request.general;
 
-import java.util.List;
-
-import com.co.microservices.base.domain.InfoGeneral.request.entities.Contacts;
-import com.co.microservices.base.domain.InfoGeneral.request.entities.Field;
+import com.co.microservices.base.domain.InfoGeneral.request.cases.CasesRequest;
+import com.co.microservices.base.domain.InfoGeneral.request.entities.EntitiesRequest;
 import com.co.microservices.base.domain.InfoGeneral.request.token.TokenRequest;
 
 public class InfoGeneralRequest {
-    private List<Contacts> contacts;
-    private int entityTypeId;
-    private List<Field> fields;
-    private List<Integer> linkedEntitiesIds;
-    private TokenRequest user;
 
-    public List<Contacts> getContacts() {
-        return contacts;
-    }
+  private EntitiesRequest entities;
+  private CasesRequest casesRequest;
+  private TokenRequest user;
 
-    public void setContacts(List<Contacts> contacts) {
-        this.contacts = contacts;
-    }
+  public EntitiesRequest getEntities() {
+    return entities;
+  }
 
-    public int getEntityTypeId() {
-        return entityTypeId;
-    }
+  public void setEntities(EntitiesRequest entities) {
+    this.entities = entities;
+  }
 
-    public void setEntityTypeId(int entityTypeId) {
-        this.entityTypeId = entityTypeId;
-    }
+  public CasesRequest getCasesRequest() {
+    return casesRequest;
+  }
 
-    public List<Field> getFields() {
-        return fields;
-    }
+  public void setCasesRequest(CasesRequest casesRequest) {
+    this.casesRequest = casesRequest;
+  }
 
-    public void setFields(List<Field> fields) {
-        this.fields = fields;
-    }
+  public TokenRequest getUser() {
+    return user;
+  }
 
-    public List<Integer> getLinkedEntitiesIds() {
-        return linkedEntitiesIds;
-    }
-
-    public void setLinkedEntitiesIds(List<Integer> linkedEntitiesIds) {
-        this.linkedEntitiesIds = linkedEntitiesIds;
-    }
-
-    public TokenRequest getUser() {
-        return user;
-    }
-
-    public void setUser(TokenRequest user) {
-        this.user = user;
-    }
+  public void setUser(TokenRequest user) {
+    this.user = user;
+  }
 }
