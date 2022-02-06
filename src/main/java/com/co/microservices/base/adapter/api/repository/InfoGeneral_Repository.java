@@ -8,6 +8,7 @@ import com.co.microservices.base.domain.InfoGeneral.request.token.TokenRequest;
 import com.co.microservices.base.domain.InfoGeneral.response.EntitiesResponse;
 import com.co.microservices.base.domain.InfoGeneral.response.TokenResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import org.apache.log4j.Logger;
 import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,11 +47,8 @@ public class InfoGeneral_Repository implements InfoGeneralInfoRepository {
     TokenRequest tokenRequest =  dozerBeanMapper.map(info.getUser(), TokenRequest.class, "token-map" );
     HttpEntity<TokenRequest> request = new HttpEntity<>(tokenRequest, headers);
     ResponseEntity<String> result = this.restTemplate.postForEntity(url+"token", request, String.class);
-
-    return objectMapper.convertValue(
-            result.getBody(),
-            TokenResponse.class
-    );
+    String responseBody =  result.getBody();
+    return new Gson().fromJson(responseBody, TokenResponse.class);
   }
 
   @Override
